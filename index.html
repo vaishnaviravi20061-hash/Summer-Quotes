@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Nature Scene</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-10px) translateX(5px);
+            }
+            50% {
+                transform: translateY(-5px) translateX(-3px);
+            }
+            75% {
+                transform: translateY(-15px) translateX(8px);
+            }
+        }
+        
+        @keyframes butterflyFly {
+            0% {
+                transform: translateX(-100px) translateY(0px);
+            }
+            25% {
+                transform: translateX(25vw) translateY(-20px);
+            }
+            50% {
+                transform: translateX(50vw) translateY(10px);
+            }
+            75% {
+                transform: translateX(75vw) translateY(-15px);
+            }
+            100% {
+                transform: translateX(100vw) translateY(5px);
+            }
+        }
+        
+        @keyframes cloudDrift {
+            0% {
+                transform: translateX(-100px);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+        
+        @keyframes sunGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 193, 7, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(255, 193, 7, 0.8);
+            }
+        }
+        
+        @keyframes confettiBurst {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(300px) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeInQuote {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .flower {
+            position: absolute;
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+        
+        .butterfly {
+            position: absolute;
+            animation: butterflyFly 20s linear infinite;
+            font-size: 24px;
+        }
+        
+        .cloud {
+            position: absolute;
+            animation: cloudDrift 40s linear infinite;
+            opacity: 0.8;
+        }
+        
+        .sun {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+            border-radius: 50%;
+            animation: sunGlow 3s ease-in-out infinite;
+        }
+        
+        .summer-bg {
+            background: linear-gradient(
+                to bottom,
+                #87CEEB 0%,
+                #98D8E8 30%,
+                #B8E6B8 70%,
+                #90EE90 100%
+            );
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            animation: confettiBurst 2s ease-out forwards;
+        }
+        
+        .quote-appear {
+            animation: fadeInQuote 1s ease-out 1.5s forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen summer-bg overflow-hidden relative">
+    <!-- Sun -->
+    <div class="sun"></div>
+    
+    <!-- Clouds -->
+    <div class="cloud" style="top: 15%; left: -150px; animation-delay: 0s;">
+        <svg width="120" height="60" viewBox="0 0 120 60">
+            <ellipse cx="30" cy="40" rx="25" ry="15" fill="rgba(255,255,255,0.9)"/>
+            <ellipse cx="60" cy="30" rx="35" ry="20" fill="rgba(255,255,255,1)"/>
+            <ellipse cx="90" cy="40" rx="25" ry="15" fill="rgba(255,255,255,0.9)"/>
+        </svg>
+    </div>
+    
+    <div class="cloud" style="top: 25%; left: -100px; animation-delay: -15s;">
+        <svg width="100" height="50" viewBox="0 0 100 50">
+            <ellipse cx="25" cy="35" rx="20" ry="12" fill="rgba(255,255,255,0.8)"/>
+            <ellipse cx="50" cy="25" rx="30" ry="18" fill="rgba(255,255,255,0.9)"/>
+            <ellipse cx="75" cy="35" rx="20" ry="12" fill="rgba(255,255,255,0.8)"/>
+        </svg>
+    </div>
+    
+    <!-- Rolling Hills -->
+    <div class="absolute bottom-0 w-full h-40">
+        <svg width="100%" height="100%" viewBox="0 0 1200 160" preserveAspectRatio="none">
+            <path d="M0,160 C300,100 600,120 900,80 C1000,60 1100,70 1200,100 L1200,160 Z" fill="#32CD32"/>
+            <path d="M0,160 C200,110 400,130 600,105 C800,80 1000,90 1200,110 L1200,160 Z" fill="#228B22" opacity="0.8"/>
+        </svg>
+    </div>
+    
+    <!-- Flowers scattered around -->
+    <div class="flower" style="bottom: 15%; left: 10%; animation-delay: 0s;">
+        <div class="text-4xl">🌸</div>
+    </div>
+    
+    <div class="flower" style="bottom: 20%; left: 20%; animation-delay: -1s;">
+        <div class="text-3xl">🌺</div>
+    </div>
+    
+    <div class="flower" style="bottom: 25%; left: 35%; animation-delay: -2s;">
+        <div class="text-4xl">🌻</div>
+    </div>
+    
+    <div class="flower" style="bottom: 18%; right: 25%; animation-delay: -0.5s;">
+        <div class="text-3xl">🌷</div>
+    </div>
+    
+    <div class="flower" style="bottom: 22%; right: 15%; animation-delay: -1.5s;">
+        <div class="text-4xl">🌼</div>
+    </div>
+    
+    <div class="flower" style="bottom: 30%; left: 60%; animation-delay: -3s;">
+        <div class="text-3xl">🌹</div>
+    </div>
+    
+    <!-- Trees -->
+    <div class="absolute bottom-0" style="left: 5%;">
+        <svg width="100" height="150" viewBox="0 0 100 150">
+            <!-- Tree trunk -->
+            <rect x="45" y="120" width="10" height="30" fill="#8B4513"/>
+            <!-- Tree crown -->
+            <circle cx="50" cy="100" r="35" fill="#228B22"/>
+            <circle cx="40" cy="90" r="25" fill="#32CD32"/>
+            <circle cx="60" cy="95" r="28" fill="#228B22"/>
+        </svg>
+    </div>
+    
+    <div class="absolute bottom-0" style="right: 8%;">
+        <svg width="120" height="160" viewBox="0 0 120 160">
+            <rect x="55" y="130" width="10" height="30" fill="#8B4513"/>
+            <circle cx="60" cy="110" r="40" fill="#228B22"/>
+            <circle cx="45" cy="95" r="30" fill="#32CD32"/>
+            <circle cx="75" cy="100" r="32" fill="#228B22"/>
+        </svg>
+    </div>
+    
+    <!-- Butterflies -->
+    <div class="butterfly" style="top: 30%; animation-delay: 0s;">🦋</div>
+    <div class="butterfly" style="top: 45%; animation-delay: -8s; animation-duration: 25s;">🦋</div>
+    <div class="butterfly" style="top: 60%; animation-delay: -15s; animation-duration: 18s;">🦋</div>
+    
+    <!-- Content Area -->
+    <div class="relative z-10 flex items-center justify-center min-h-screen">
+        <div class="text-center max-w-2xl mx-auto">
+            <h1 class="text-5xl font-bold text-green-800 mb-4 drop-shadow-lg">🌞 Summer Quotes 🌞</h1>
+            <p class="text-xl text-green-700 mb-8 drop-shadow-sm">Find inspiration in this beautiful summer paradise</p>
+            
+            <div class="relative mb-8">
+                <button id="bloomButton" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg transform hover:scale-105 transition-all duration-200">
+                    🎊 Burst Summer Confetti!
+                </button>
+            </div>
+            
+            <div id="confettiContainer" class="relative flex justify-center items-center h-64 mb-8">
+                <!-- Confetti will appear here -->
+            </div>
+            
+            <div id="quoteContainer" class="bg-yellow-100/40 backdrop-blur-md rounded-2xl p-6 shadow-xl max-w-lg mx-auto border border-yellow-200/50" style="display: none;">
+                <div id="quoteEmoji" class="text-6xl mb-4 text-center drop-shadow-lg"></div>
+                <p id="quoteText" class="text-lg text-green-800 italic mb-4 font-medium"></p>
+                <button id="nextButton" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200">
+                    🌻 Another Summer Quote
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quotes array
+        const quotes = [
+            {
+                text: "Believe you can and you're halfway there.",
+                emoji: "💪🏔️"
+            },
+            {
+                text: "The only way to do great work is to love what you do.",
+                emoji: "❤️💼"
+            },
+            {
+                text: "Life is what happens to you while you're busy making other plans.",
+                emoji: "🌊📅"
+            },
+            {
+                text: "The future belongs to those who believe in the beauty of their dreams.",
+                emoji: "🌟💭"
+            },
+            {
+                text: "It is during our darkest moments that we must focus to see the light.",
+                emoji: "🕯️🌅"
+            },
+            {
+                text: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+                emoji: "🏆💪"
+            },
+            {
+                text: "The only impossible journey is the one you never begin.",
+                emoji: "🚀🛤️"
+            },
+            {
+                text: "In the middle of difficulty lies opportunity.",
+                emoji: "⛰️💎"
+            },
+            {
+                text: "Be yourself; everyone else is already taken.",
+                emoji: "🦄✨"
+            },
+            {
+                text: "You are never too old to set another goal or to dream a new dream.",
+                emoji: "🌙🎯"
+            }
+        ];
+
+        // Get DOM elements
+        const bloomButton = document.getElementById('bloomButton');
+        const confettiContainer = document.getElementById('confettiContainer');
+        const quoteContainer = document.getElementById('quoteContainer');
+        const quoteText = document.getElementById('quoteText');
+        const quoteEmoji = document.getElementById('quoteEmoji');
+        const nextButton = document.getElementById('nextButton');
+
+        // Quote functions
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        function createConfetti() {
+            const colors = ['#FFD700', '#FF6347', '#32CD32', '#FF69B4', '#00CED1', '#FF4500', '#9370DB', '#20B2AA'];
+            const shapes = ['circle', 'square', 'triangle'];
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                
+                // Random color
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random shape
+                const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                if (shape === 'circle') {
+                    confetti.style.borderRadius = '50%';
+                } else if (shape === 'triangle') {
+                    confetti.style.width = '0';
+                    confetti.style.height = '0';
+                    confetti.style.borderLeft = '6px solid transparent';
+                    confetti.style.borderRight = '6px solid transparent';
+                    confetti.style.borderBottom = `12px solid ${color}`;
+                    confetti.style.background = 'transparent';
+                } else {
+                    confetti.style.borderRadius = '2px';
+                }
+                
+                if (shape !== 'triangle') {
+                    confetti.style.backgroundColor = color;
+                }
+                
+                // Random position
+                confetti.style.left = Math.random() * 100 + '%';
+                
+                // Random delay
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                
+                // Random duration
+                confetti.style.animationDuration = (Math.random() * 1 + 1.5) + 's';
+                
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        function burstConfetti() {
+            // Clear previous confetti
+            confettiContainer.innerHTML = '';
+            quoteContainer.style.display = 'none';
+            
+            // Create confetti burst
+            createConfetti();
+            
+            // Get random quote
+            const quote = getRandomQuote();
+            quoteText.textContent = quote.text;
+            quoteEmoji.textContent = quote.emoji;
+            
+            // Show quote after confetti bursts
+            setTimeout(() => {
+                quoteContainer.style.display = 'block';
+                quoteContainer.classList.add('quote-appear');
+            }, 1500);
+            
+            // Hide burst button temporarily
+            bloomButton.style.display = 'none';
+        }
+
+        function resetGame() {
+            confettiContainer.innerHTML = '';
+            quoteContainer.style.display = 'none';
+            quoteContainer.classList.remove('quote-appear');
+            bloomButton.style.display = 'inline-block';
+        }
+
+        // Event listeners
+        bloomButton.addEventListener('click', burstConfetti);
+        nextButton.addEventListener('click', resetGame);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98fd99c435647ea4',t:'MTc2MDY4MTA4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
