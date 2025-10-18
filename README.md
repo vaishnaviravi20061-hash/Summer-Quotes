@@ -1,4 +1,5 @@
 # 🌞 Summer Quotes 🌞
+https://vaishnavipr-hash.github.io/Summer-Quotes/
 
 Welcome to **Summer Quotes**, a bright and uplifting web app that delivers **random positive quotes** with a sunny summer theme! ☀️🍹  
 
